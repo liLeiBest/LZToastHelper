@@ -1,0 +1,6 @@
+framework module Pods_LZToastHelper_Tests {
+  umbrella header "Pods-LZToastHelper_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
