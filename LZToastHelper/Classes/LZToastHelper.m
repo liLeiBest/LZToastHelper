@@ -453,6 +453,7 @@ NSString * const LZToastMessageForOther = @"";
 	if (nil == view) {
 		view = [UIApplication sharedApplication].keyWindow;
 	}
+	[view endEditing:YES];
 	MBProgressHUD *hud = [self toastToView:view];
 	self.myHud = hud;
 	
@@ -470,20 +471,13 @@ NSString * const LZToastMessageForOther = @"";
 	}
 	
 	// 设置提示语
-	if (nil !=  message && message.length) {
-
-		if (nil == detail || 0 == detail.length) {
-			hud.detailsLabel.attributedText =
-			[[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
-		} else {
-			hud.label.attributedText =
-			[[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
-		}
+	hud.label.attributedText =
+	[[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
+	if (nil == detail) {
+		detail = @"";
 	}
-	if (nil != detail && detail.length) {
-		hud.detailsLabel.attributedText =
-		[[NSAttributedString alloc] initWithString:detail attributes:self.detailAttributed];
-	}
+	hud.detailsLabel.attributedText =
+	[[NSAttributedString alloc] initWithString:detail attributes:self.detailAttributed];
 	
 	if (YES == hide) {
 		[self hideMessageAfterDelay:self.showTime];
