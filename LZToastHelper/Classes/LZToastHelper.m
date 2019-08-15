@@ -294,7 +294,6 @@ NSString * const LZToastMessageForOther = @"";
 }
 
 #pragma mark - -> Other
-
 /** 改变提示状态 */
 - (void)changeState:(LZToastState)state {
 	
@@ -471,9 +470,12 @@ NSString * const LZToastMessageForOther = @"";
 	}
 	
 	// 设置提示语
+	if (![message isKindOfClass:[NSString class]] || nil == message) {
+		message = @"";
+	}
 	hud.label.attributedText =
 	[[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
-	if (nil == detail) {
+	if (![detail isKindOfClass:[NSString class]] || nil == detail) {
 		detail = @"";
 	}
 	hud.detailsLabel.attributedText =
