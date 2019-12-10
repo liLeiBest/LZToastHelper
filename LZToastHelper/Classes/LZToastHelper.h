@@ -64,7 +64,7 @@ typedef NS_ENUM(NSUInteger, LZToastState) {
  
  @brief 提示完成Block
  */
-typedef void (^ToastCompleteBlock)(void);
+typedef void (^LZToastCompleteBlock)(void);
 
 
 /**
@@ -139,11 +139,11 @@ typedef void (^ToastCompleteBlock)(void);
  
  @param state         LZToastState
  @param view          视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessageForState:(LZToastState)state
                      toView:(UIView *)view
-                 completion:(ToastCompleteBlock)completeBlock;
+                 completion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -203,11 +203,11 @@ typedef void (^ToastCompleteBlock)(void);
  
  @param message message
  @param view    视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock;
+         completion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -230,12 +230,12 @@ typedef void (^ToastCompleteBlock)(void);
  @param message       提示语
  @param iconView      图标
  @param view          视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock;
+         completion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -258,12 +258,12 @@ typedef void (^ToastCompleteBlock)(void);
  @param message message
  @param detail  detail
  @param view    视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock;
+         completion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -283,11 +283,11 @@ typedef void (^ToastCompleteBlock)(void);
  
  @param message message
  @param view    视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessageWithoutIcon:(NSString *)message
                         toView:(UIView *)view
-                    completion:(ToastCompleteBlock)completeBlock;
+                    completion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -298,13 +298,13 @@ typedef void (^ToastCompleteBlock)(void);
  @param detail        detail
  @param iconView      icon
  @param view          视图
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock;
+         completion:(LZToastCompleteBlock)completeBlock;
 
 #pragma mark - HIDE
 
@@ -320,9 +320,9 @@ typedef void (^ToastCompleteBlock)(void);
  
  @brief 隐藏提示，可以添加提示消失后的动作
  
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
-- (void)hideMessageCompletion:(ToastCompleteBlock)completeBlock;
+- (void)hideMessageCompletion:(LZToastCompleteBlock)completeBlock;
 
 /**
  @author Lilei
@@ -339,10 +339,10 @@ typedef void (^ToastCompleteBlock)(void);
  @brief 延迟 delay 秒隐藏提示，可以添加提示消失后的动作
  
  @param delay         delay
- @param completeBlock ToastCompleteBlock
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)hideMessageAfterDelay:(NSTimeInterval)delay
-                   completion:(ToastCompleteBlock)completeBlock;
+                   completion:(LZToastCompleteBlock)completeBlock;
 
 #pragma mark - OTHER
 

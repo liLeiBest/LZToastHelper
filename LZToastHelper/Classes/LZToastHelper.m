@@ -133,7 +133,7 @@ NSString * const LZToastMessageForOther = @"";
 /** 显示不同状态的提示，可以添加提示消失后的动作 */
 - (void)showMessageForState:(LZToastState)state
                      toView:(UIView *)view
-                 completion:(ToastCompleteBlock)completeBlock {
+                 completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessageForState:state toView:view];
     self.myHud.completionBlock = completeBlock;
@@ -185,7 +185,7 @@ NSString * const LZToastMessageForOther = @"";
 /** 显示指定的提示语，可以添加提示消失后的动作 */
 - (void)showMessage:(NSString *)message
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock {
+         completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message toView:view];
     self.myHud.completionBlock = completeBlock;
@@ -207,7 +207,7 @@ NSString * const LZToastMessageForOther = @"";
 - (void)showMessage:(NSString *)message
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock {
+         completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message customIconView:iconView toView:view];
     self.myHud.completionBlock = completeBlock;
@@ -229,7 +229,7 @@ NSString * const LZToastMessageForOther = @"";
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock {
+         completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message detail:detail toView:view];
     self.myHud.completionBlock = completeBlock;
@@ -244,7 +244,7 @@ NSString * const LZToastMessageForOther = @"";
 /** 显示只包含 message 的提示，可以添加提示消失后的动作 */
 - (void)showMessageWithoutIcon:(NSString *)message
                         toView:(UIView *)view
-                    completion:(ToastCompleteBlock)completeBlock {
+                    completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message toView:view];
     self.myHud.completionBlock = completeBlock;
@@ -255,15 +255,15 @@ NSString * const LZToastMessageForOther = @"";
              detail:(NSString *)detail
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view
-         completion:(ToastCompleteBlock)completeBlock {
+         completion:(LZToastCompleteBlock)completeBlock {
 	
     BOOL ignore = nil == iconView ? YES : NO;
     [self showToastMessage:message
-                     detail:detail
-                   iconView:iconView
-              toContentView:view
-                 ignoreIcon:ignore
-                   autoHide:NO];
+                    detail:detail
+                  iconView:iconView
+             toContentView:view
+                ignoreIcon:ignore
+                  autoHide:NO];
 	self.myHud.completionBlock = completeBlock;
 }
 
@@ -274,7 +274,7 @@ NSString * const LZToastMessageForOther = @"";
 }
 
 /** 隐藏提示，可以添加提示消失后的动作 */
-- (void)hideMessageCompletion:(ToastCompleteBlock)completeBlock {
+- (void)hideMessageCompletion:(LZToastCompleteBlock)completeBlock {
 	
     [self hideMessage];
     self.myHud.completionBlock = completeBlock;
@@ -287,7 +287,7 @@ NSString * const LZToastMessageForOther = @"";
 
 /** 延迟 delay 秒隐藏提示，可以添加提示消失后的动作 */
 - (void)hideMessageAfterDelay:(NSTimeInterval)delay
-                   completion:(ToastCompleteBlock)completeBlock {
+                   completion:(LZToastCompleteBlock)completeBlock {
 	
     [self hideMessageAfterDelay:delay];
     self.myHud.completionBlock = completeBlock;
