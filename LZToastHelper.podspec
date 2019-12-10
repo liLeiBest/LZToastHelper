@@ -2,9 +2,11 @@
 Pod::Spec.new do |s|
   s.name             = 'LZToastHelper'
   s.version          = '0.1.1.1'
-  s.summary          = 'A short description of LZToastHelper.'
+  s.summary          = '基于 MBProgressHUD 进行二次封装。'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                        1.单例
+                        2.全局统一配置
+                        3.隐藏统一回调
                        DESC
 
   s.homepage         = 'https://github.com/lilei_hapy@163.com/LZToastHelper'
@@ -17,7 +19,6 @@ TODO: Add long description of the pod here.
   
   s.source_files 	   	= 'LZToastHelper/Classes/*.{h,m}'
   s.public_header_files = 'LZToastHelper/Classes/*.h'
-  s.resource = 'LZToastHelper/Classes/LZToastResource.bundle'
   s.dependency 'MBProgressHUD'
   
 end

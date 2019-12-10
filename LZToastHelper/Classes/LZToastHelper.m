@@ -40,7 +40,6 @@ NSString * const LZToastMessageForOther = @"";
     if (nil == _stateMessages) {
         _stateMessages = [NSMutableDictionary dictionary];
     }
-    
     return _stateMessages;
 }
 
@@ -49,7 +48,6 @@ NSString * const LZToastMessageForOther = @"";
     if (nil == _stateIcons) {
         _stateIcons = [NSMutableDictionary dictionary];
     }
-    
     return _stateIcons;
 }
 
@@ -62,7 +60,6 @@ NSString * const LZToastMessageForOther = @"";
         [self prepareMessageForState];
         [self prepareIconForState];
     }
-    
     return self;
 }
 
@@ -75,7 +72,6 @@ NSString * const LZToastMessageForOther = @"";
 	dispatch_once(&onceToken, ^{
 		_instace = [[LZToastHelper alloc] init];
 	});
-	
 	return _instace;
 }
 
@@ -267,6 +263,36 @@ NSString * const LZToastMessageForOther = @"";
 	self.myHud.completionBlock = completeBlock;
 }
 
+/** 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作，可以交互主动取消 */
+- (void)showMessage:(NSString *)message
+             detail:(NSString *)detail
+     customIconView:(UIImageView *)iconView
+             toView:(UIView *)view
+  interactionEnable:(BOOL)interactionEnable
+        buttonTitle:(NSString *)buttonTitle
+         completion:(LZToastCompleteBlock)completeBlock {
+    
+    [self showMessage:message
+               detail:detail
+       customIconView:iconView
+               toView:view
+           completion:completeBlock];
+    if (interactionEnable &&
+        buttonTitle &&
+        [buttonTitle isKindOfClass:[NSString class]] &&
+        buttonTitle.length) {
+        
+        if (nil == iconView) {
+            self.myHud.mode = MBProgressHUDModeIndeterminate;
+        }
+        [self.myHud.button setTitle:buttonTitle
+                           forState:UIControlStateNormal];
+        [self.myHud.button addTarget:self
+                              action:@selector(hideMessage)
+                    forControlEvents:UIControlEventTouchDown];
+    }
+}
+
 #pragma mark Hide
 /** 隐藏提示 */
 - (void)hideMessage {
@@ -297,37 +323,25 @@ NSString * const LZToastMessageForOther = @"";
 /** 改变提示状态 */
 - (void)changeState:(LZToastState)state {
 	
-    // 保存提示框文字属性
-    NSAttributedString *messageAttributedString = nil;
-    if (self.myHud.label.attributedText) {
-        messageAttributedString =
-		[[NSAttributedString alloc] initWithAttributedString:self.myHud.label.attributedText];
-    }
-    NSAttributedString *detailAttributedString = nil;
-    if (self.myHud.detailsLabel.attributedText) {
-        detailAttributedString =
-		[[NSAttributedString alloc] initWithAttributedString:self.myHud.detailsLabel.attributedText];
-    }
-    
     // 改变提示框图标
 	UIImageView *iconImgView = self.stateIcons[@(state)];
     if (nil != iconImgView) {
 		
         [self.myHud setCustomView:iconImgView];
         self.myHud.mode = MBProgressHUDModeCustomView;
+    } else {
+        self.myHud.mode = MBProgressHUDModeText;
     }
 	
 	// 改变提示文字
-	NSString *message = self.stateMessages[@(state)];
-	if (nil != message && message.length) {
-		messageAttributedString =
-		[[NSAttributedString alloc] initWithString:message
-										attributes:self.messageAttributed];
-	}
-	
-    // 设置提示框文字属性
-    self.myHud.label.attributedText = messageAttributedString;
-    self.myHud.detailsLabel.attributedText = detailAttributedString;
+    NSString *message = self.myHud.label.attributedText.string;
+    NSString *detail = self.myHud.detailsLabel.attributedText.string;
+    if (nil == message || 0 == message.length) {
+        detail = self.stateMessages[@(state)];
+    } else {
+        message = self.stateMessages[@(state)];
+    }
+    [self updateToastMessage:message detail:detail];
 }
 
 #pragma mark - -> Private
@@ -357,22 +371,14 @@ NSString * const LZToastMessageForOther = @"";
  */
 - (void)prepareIconForState {
 	
-    // 成功图标
-    UIImage *completeImg = [self imageWithResourceName:@"success.png"];
-    UIImageView *completeImgView = [[UIImageView alloc] initWithImage:completeImg];
-    
-    // 失败图标
-    UIImage *failureImg = [self imageWithResourceName:@"failure.png"];
-    UIImageView *failureImgView = [[UIImageView alloc] initWithImage:failureImg];
-    
     [self setIcon:nil forState:LZToastStateLoading];
-    [self setIcon:completeImgView forState:LZToastStateLoadComplete];
+    [self setIcon:nil forState:LZToastStateLoadComplete];
     [self setIcon:nil forState:LZToastStateUpdating];
-    [self setIcon:completeImgView forState:LZToastStateUpdateComplete];
+    [self setIcon:nil forState:LZToastStateUpdateComplete];
     [self setIcon:nil forState:LZToastStateSubmitting];
-    [self setIcon:completeImgView forState:LZToastStateSubmitComplete];
-    [self setIcon:completeImgView forState:LZToastStateOperateSuccess];
-    [self setIcon:failureImgView forState:LZToastStateOperateFailure];
+    [self setIcon:nil forState:LZToastStateSubmitComplete];
+    [self setIcon:nil forState:LZToastStateOperateSuccess];
+    [self setIcon:nil forState:LZToastStateOperateFailure];
     [self setIcon:nil forState:LZToastStateCommon];
     [self setIcon:nil forState:LZToastStateOther];
 }
@@ -418,15 +424,18 @@ NSString * const LZToastMessageForOther = @"";
                  autoHide:(BOOL)hide {
 	
     if (nil != self.myHud) {
+        
+        self.myHud.minShowTime = 0;
         [self.myHud hideAnimated:NO];
+        self.myHud = nil;
 	}
-	
-	[self showToast:message
-			  detail:detail
-			iconView:iconView
-	   toContentView:view
-		  ignoreIcon:ignore
-			autoHide:hide];
+    
+    [self showToast:message
+             detail:detail
+           iconView:iconView
+      toContentView:view
+         ignoreIcon:ignore
+           autoHide:hide];
 }
 
 /**
@@ -442,12 +451,12 @@ NSString * const LZToastMessageForOther = @"";
  @param hide 是否自动隐藏
  */
 - (void)showToast:(NSString *)message
-			detail:(NSString *)detail
-		  iconView:(UIImageView *)iconView
-	 toContentView:(UIView *)view
-		ignoreIcon:(BOOL)ignore
-		  autoHide:(BOOL)hide {
-	
+           detail:(NSString *)detail
+         iconView:(UIImageView *)iconView
+    toContentView:(UIView *)view
+       ignoreIcon:(BOOL)ignore
+         autoHide:(BOOL)hide {
+    
 	// 实例
 	if (nil == view) {
 		view = [UIApplication sharedApplication].keyWindow;
@@ -457,33 +466,26 @@ NSString * const LZToastMessageForOther = @"";
 	self.myHud = hud;
 	
 	// mode
-	if (nil != iconView) {
+    if (YES == ignore) {
+        hud.mode = MBProgressHUDModeText;
+    } else if (nil != iconView) {
 		
 		iconView.contentMode = UIViewContentModeScaleAspectFit;
 		UIImage *fitImg = [self scaledImage:iconView.image];
 		iconView.image = fitImg;
-		
 		hud.customView = iconView;
 		hud.mode = MBProgressHUDModeCustomView;
-	} else if (YES == ignore) {
-		hud.mode = MBProgressHUDModeText;
-	}
+    } else {
+        hud.mode = MBProgressHUDModeIndeterminate;
+    }
 	
 	// 设置提示语
-	if (![message isKindOfClass:[NSString class]] || nil == message) {
-		message = @"";
-	}
-	hud.label.attributedText =
-	[[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
-	if (![detail isKindOfClass:[NSString class]] || nil == detail) {
-		detail = @"";
-	}
-	hud.detailsLabel.attributedText =
-	[[NSAttributedString alloc] initWithString:detail attributes:self.detailAttributed];
-	
-	if (YES == hide) {
-		[self hideMessageAfterDelay:self.showTime];
-	}
+    [self updateToastMessage:message detail:detail];
+    
+    // 是否自动隐藏
+    if (YES == hide) {
+        [self hideMessageAfterDelay:self.showTime];
+    }
 }
 
 /**
@@ -501,7 +503,7 @@ NSString * const LZToastMessageForOther = @"";
     hud.minSize = self.minSize;
     hud.graceTime = 0.25f;
     hud.minShowTime = self.showTime;
-    hud.margin = 5.0f;
+    hud.margin = 10.0f;
 	hud.defaultMotionEffectsEnabled = YES;
     hud.animationType = MBProgressHUDAnimationZoomOut;
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -510,7 +512,6 @@ NSString * const LZToastMessageForOther = @"";
     hud.bezelView.color = self.backgroundColor;
     hud.contentColor = self.contentColor;
     hud.removeFromSuperViewOnHide = YES;
-	
     return hud;
 }
 
@@ -528,7 +529,6 @@ NSString * const LZToastMessageForOther = @"";
         [image drawInRect:CGRectMake(0, 0, fitSize.width, fitSize.height)];
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        
         return newImage;
     }  else {
         return image;
@@ -538,20 +538,26 @@ NSString * const LZToastMessageForOther = @"";
 /**
  @author Lilei
  
- @brief 实例资源目录下的图片
- 
- @param name 图片名
- 
- @return UIImage
+ @brief 更新标题和内容文字
  */
-- (UIImage *)imageWithResourceName:(NSString *)name {
-	
-    NSBundle *toastBundle =
-	[NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]]
-							  pathForResource:@"LZToastResource.bundle" ofType:nil]];
-    NSString *imgPath = [toastBundle pathForResource:name ofType:nil];
+- (void)updateToastMessage:(NSString *)message
+                    detail:(NSString *)detail {
     
-    return [UIImage imageWithContentsOfFile:imgPath];
+    if (![message isKindOfClass:[NSString class]] || nil == message) {
+        message = @"";
+    }
+    if (![detail isKindOfClass:[NSString class]] || nil == detail) {
+        detail = @"";
+    }
+    if (message.length && 0 == detail.length) {
+        
+        detail = message;
+        message = @"";
+    }
+    self.myHud.label.attributedText =
+    [[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
+    self.myHud.detailsLabel.attributedText =
+    [[NSAttributedString alloc] initWithString:detail attributes:self.detailAttributed];
 }
 
 @end
