@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                         3.隐藏统一回调
                        DESC
 
-  s.homepage         = 'https://github.com/lilei_hapy@163.com/LZToastHelper'
+  s.homepage         = 'https://github.com/liLeiBest'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lilei_hapy@163.com' => 'lilei_hapy@163.com' }
   s.source           = { :git => 'https://github.com/liLeiBest/LZToastHelper.git', :tag => s.version.to_s }
