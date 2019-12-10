@@ -1,8 +1,8 @@
 {
   "name": "LZToastHelper",
-  "version": "0.1.1.1",
-  "summary": "A short description of LZToastHelper.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1.2",
+  "summary": "基于 MBProgressHUD 进行二次封装。",
+  "description": "1.单例\n2.全局统一配置\n3.隐藏统一回调",
   "homepage": "https://github.com/lilei_hapy@163.com/LZToastHelper",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/liLeiBest/LZToastHelper.git",
-    "tag": "0.1.1.1"
+    "tag": "0.1.2"
   },
   "frameworks": [
     "Foundation",
@@ -24,7 +24,6 @@
   },
   "source_files": "LZToastHelper/Classes/*.{h,m}",
   "public_header_files": "LZToastHelper/Classes/*.h",
-  "resources": "LZToastHelper/Classes/LZToastResource.bundle",
   "dependencies": {
     "MBProgressHUD": [
 
