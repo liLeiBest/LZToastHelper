@@ -466,7 +466,7 @@ NSString * const LZToastMessageForOther = @"";
 	self.myHud = hud;
 	
 	// mode
-    if (YES == ignore) {
+    if (YES == ignore || nil == iconView) {
         hud.mode = MBProgressHUDModeText;
     } else if (nil != iconView) {
 		

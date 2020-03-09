@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E94AB5F5DCD434CA487D9670C6E2D33 /* LZToastHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5CF047B8D25421EB741D33E89EC1AE /* LZToastHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1233FADEEA9687EE14A3019CCC5E543D /* LZToastHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844304A5ECCED267FAFE05EE6C8D057 /* LZToastHelper.m */; };
-		19855426666ED3FB7BE88F5910AC0C40 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6152B0CD59AAF2557B3AA4375B61BEED /* MBProgressHUD.m */; };
+		0E94AB5F5DCD434CA487D9670C6E2D33 /* LZToastHelper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29AF51EF0B28B9475988D3DF0E46366B /* LZToastHelper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1233FADEEA9687EE14A3019CCC5E543D /* LZToastHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E000B854C963E12B3FF443A2AFA16 /* LZToastHelper.m */; };
+		19855426666ED3FB7BE88F5910AC0C40 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C8787AEF5F8F4CCDD782A64D078427 /* MBProgressHUD.m */; };
 		1B3C7FBAD3204EAFEDF9262EA8F5F82D /* Pods-LZToastHelper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03EC2712A3EC4FE794F61C51C1D5B0 /* Pods-LZToastHelper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBFE2F85468444E250F39D7C91C7F51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2C9EBA77371B18B62DF65996D4A60 /* UIKit.framework */; };
-		40FF4AA66097DB9BC2507773C3BE8ECC /* LZToastHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F4DAA5F5F294B6B58B5829A6BA91A289 /* LZToastHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		491CBEDADB6278E73846F32D429DD076 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 071047A4A08135548333750E08C06DA7 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57A4AF9C69B83CC81BA6E3E931C53885 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 657678C8C3FB4725CEE10D8E8607F1EE /* MBProgressHUD-dummy.m */; };
+		40FF4AA66097DB9BC2507773C3BE8ECC /* LZToastHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 5072D6C2DF8578CBFA8FB9ABEBD17DD7 /* LZToastHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		491CBEDADB6278E73846F32D429DD076 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F31C808188F0318B8D5A16F065156F9 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57A4AF9C69B83CC81BA6E3E931C53885 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF19F2C17178E7145FE1DBF7DE5B7D /* MBProgressHUD-dummy.m */; };
 		5DE9D638EC500E046FB067246508107D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FCB00F96A7AED06DBBD91629E25D03 /* Foundation.framework */; };
 		6985080734EFE231ED223BEBD54AD3D2 /* Pods-LZToastHelper_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 389BB5EB39E44BD357EDB3D768C4848F /* Pods-LZToastHelper_Example-dummy.m */; };
 		8473AACF5A52ED43F8C5F88B4743B625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FCB00F96A7AED06DBBD91629E25D03 /* Foundation.framework */; };
 		90EA8F44BF392F75698FE684F597F4C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE8E83538B2326B7D57D7C3BC7199EA /* QuartzCore.framework */; };
 		91382DA1726E0FF714E7562C098F7A1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261142ECD08AA96D02F8D4C1978B9F40 /* CoreGraphics.framework */; };
-		B165E96BF0931E6662D5B855D7C37DB2 /* LZToastHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D2489261EE454A0D732104F8AD0977 /* LZToastHelper-dummy.m */; };
+		B165E96BF0931E6662D5B855D7C37DB2 /* LZToastHelper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC375BC0AE770404204E4B406DB8D15 /* LZToastHelper-dummy.m */; };
 		B601DB31053E77E810D460157F41B939 /* Pods-LZToastHelper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ADF714655EB09995147882869E6EA4 /* Pods-LZToastHelper_Tests-dummy.m */; };
 		BEA7F5FEE42DFF3D37669ADAF27471FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FCB00F96A7AED06DBBD91629E25D03 /* Foundation.framework */; };
 		C189D273281C8F6489757E69753C09FC /* Pods-LZToastHelper_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8435854E5C6D1E4B0C1CAE79207097C2 /* Pods-LZToastHelper_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D44658B01F5E343B12D2FCA6913F5D64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FCB00F96A7AED06DBBD91629E25D03 /* Foundation.framework */; };
 		F98089C36829E68B9EF0CBBF639A0F08 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8006BC20218EC5EF2664027C5D1601E8 /* MBProgressHUD.framework */; };
-		F9F574E246580DE274C12056916256F5 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = E6584E1984A3CC79C447B818C6F79920 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9F574E246580DE274C12056916256F5 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = FC7C54894F0D982511B53767CE31EBF1 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,39 +61,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		071047A4A08135548333750E08C06DA7 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		0A8FC788FCE1FC2E785E9879B474740B /* LZToastHelper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LZToastHelper-Info.plist"; sourceTree = "<group>"; };
-		218B94D0CDB33A53CF517CDCA518CAE7 /* LZToastHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LZToastHelper-prefix.pch"; sourceTree = "<group>"; };
+		01BE765A664D975BBDA9E1C191CFEE85 /* LZToastHelper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LZToastHelper-Info.plist"; sourceTree = "<group>"; };
+		04071F71265B7DF1AC795D8DF1BBA9B2 /* LZToastHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LZToastHelper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1D2D275913D37000CA0D495762F74E0B /* LZToastHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LZToastHelper.debug.xcconfig; sourceTree = "<group>"; };
 		2346556B3D2D1A3E060A9ACCA368D0F7 /* Pods-LZToastHelper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LZToastHelper_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		25DA39FF87F1248E254031A194643386 /* LZToastHelper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LZToastHelper.modulemap; sourceTree = "<group>"; };
 		261142ECD08AA96D02F8D4C1978B9F40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		265DF1476AE1D8B278FBF5CBEE40E4A3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		27757D3DB625150E876A54F1E054E6B1 /* Pods-LZToastHelper_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LZToastHelper_Tests.modulemap"; sourceTree = "<group>"; };
-		2844304A5ECCED267FAFE05EE6C8D057 /* LZToastHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LZToastHelper.m; path = LZToastHelper/Classes/LZToastHelper.m; sourceTree = "<group>"; };
-		314A8B77E12FA60EC7A3A26BD6902E97 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		327D77822D21DB044885C884DBF83864 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		37ABD8DCAA991ADD9AA4DDA40D85379D /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		29AF51EF0B28B9475988D3DF0E46366B /* LZToastHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LZToastHelper-umbrella.h"; sourceTree = "<group>"; };
 		389BB5EB39E44BD357EDB3D768C4848F /* Pods-LZToastHelper_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LZToastHelper_Example-dummy.m"; sourceTree = "<group>"; };
 		409D7A2B3ABDC3AAE4D157F80706C981 /* Pods-LZToastHelper_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LZToastHelper_Example-Info.plist"; sourceTree = "<group>"; };
+		48455590C4F039F1B28162E94117DFB4 /* LZToastHelper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LZToastHelper-prefix.pch"; sourceTree = "<group>"; };
 		4974D5248C77C91CED6A753804B5F5E0 /* Pods-LZToastHelper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LZToastHelper_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4ECF19F2C17178E7145FE1DBF7DE5B7D /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		4EF5FECEC8F17805EB21FC1E6129AF1A /* LZToastHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LZToastHelper.framework; path = LZToastHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5072D6C2DF8578CBFA8FB9ABEBD17DD7 /* LZToastHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LZToastHelper.h; path = LZToastHelper/Classes/LZToastHelper.h; sourceTree = "<group>"; };
+		53025FD44EEDEB9CEAE854B0AE31CB82 /* MBProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		5E221A5AAC45302AF396416395265FFD /* MBProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		5F31C808188F0318B8D5A16F065156F9 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		60E5AA219CB8D30A1D066175C29346FC /* Pods_LZToastHelper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LZToastHelper_Example.framework; path = "Pods-LZToastHelper_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6152B0CD59AAF2557B3AA4375B61BEED /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		619D2E1B8E7310902C83396D0E12E72A /* MBProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBProgressHUD-Info.plist"; sourceTree = "<group>"; };
-		657678C8C3FB4725CEE10D8E8607F1EE /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		67DC07C5D170D117A3603681CCB7283D /* LZToastHelper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LZToastHelper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		67C8787AEF5F8F4CCDD782A64D078427 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		67FCB00F96A7AED06DBBD91629E25D03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CEB62E30C5BAB8D4A2A435A4D4DA33A /* MBProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.release.xcconfig; sourceTree = "<group>"; };
 		6DF0879F9D30230807EEDCCFF08C5F41 /* Pods-LZToastHelper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LZToastHelper_Example-frameworks.sh"; sourceTree = "<group>"; };
+		71586C258C9A4BA21A453C698866EBC7 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		8006BC20218EC5EF2664027C5D1601E8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435854E5C6D1E4B0C1CAE79207097C2 /* Pods-LZToastHelper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LZToastHelper_Tests-umbrella.h"; sourceTree = "<group>"; };
-		850FF76381C7E65E1AF730D36F519546 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
 		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9E000B854C963E12B3FF443A2AFA16 /* LZToastHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LZToastHelper.m; path = LZToastHelper/Classes/LZToastHelper.m; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A11A0F9EBFD145DC1004225313972BF1 /* Pods-LZToastHelper_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LZToastHelper_Tests-Info.plist"; sourceTree = "<group>"; };
-		A9404031CDC262A4979D6093DC0E799E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		B2303342D285C8E4F9D2CCCB950F5F93 /* LZToastHelper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LZToastHelper.modulemap; sourceTree = "<group>"; };
-		B78BE3664E508F29B47343BB4F620D39 /* LZToastHelper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LZToastHelper.xcconfig; sourceTree = "<group>"; };
+		A6FAA5A4727AFA2C62EC275E780EF5ED /* LZToastHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LZToastHelper.release.xcconfig; sourceTree = "<group>"; };
 		B8868FCB8FD6648737F607F48D600756 /* Pods-LZToastHelper_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LZToastHelper_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C59182149EC37B4068FC11CBCA60BB01 /* Pods-LZToastHelper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LZToastHelper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD20508C1F655A36B8EB05C1C6500503 /* Pods_LZToastHelper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LZToastHelper_Tests.framework; path = "Pods-LZToastHelper_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC375BC0AE770404204E4B406DB8D15 /* LZToastHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LZToastHelper-dummy.m"; sourceTree = "<group>"; };
 		D2C8F628027376EFEDE269929BE78EFC /* Pods-LZToastHelper_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LZToastHelper_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D89E0A777AFAE979F0CC58C6814FEC32 /* Pods-LZToastHelper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LZToastHelper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		DBE8E83538B2326B7D57D7C3BC7199EA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -101,12 +104,11 @@
 		DD756148F718FC2715EE73E4EA37591B /* Pods-LZToastHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LZToastHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DE470F2561FF15026B35BFAB8257CD99 /* Pods-LZToastHelper_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LZToastHelper_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E4C2C9EBA77371B18B62DF65996D4A60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E6584E1984A3CC79C447B818C6F79920 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		EA5CF047B8D25421EB741D33E89EC1AE /* LZToastHelper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LZToastHelper-umbrella.h"; sourceTree = "<group>"; };
 		EC03EC2712A3EC4FE794F61C51C1D5B0 /* Pods-LZToastHelper_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LZToastHelper_Example-umbrella.h"; sourceTree = "<group>"; };
-		F0D2489261EE454A0D732104F8AD0977 /* LZToastHelper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LZToastHelper-dummy.m"; sourceTree = "<group>"; };
-		F4DAA5F5F294B6B58B5829A6BA91A289 /* LZToastHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LZToastHelper.h; path = LZToastHelper/Classes/LZToastHelper.h; sourceTree = "<group>"; };
+		F1A0E508679ED342B4AEDF1866C001EB /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		F5ADF714655EB09995147882869E6EA4 /* Pods-LZToastHelper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LZToastHelper_Tests-dummy.m"; sourceTree = "<group>"; };
+		FC7C54894F0D982511B53767CE31EBF1 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FD5085886DACD2CC6EAC0AC34EF7BACD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,17 +151,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03008EA7FA88E465302796FC1C541B71 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				E6584E1984A3CC79C447B818C6F79920 /* MBProgressHUD.h */,
-				6152B0CD59AAF2557B3AA4375B61BEED /* MBProgressHUD.m */,
-				972C05D4ABF4AFE0028A9907AE29C8E3 /* Support Files */,
-			);
-			name = MBProgressHUD;
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
 		0B9CF4714D997E223D3F81BF5A0DFE89 /* Pods-LZToastHelper_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +168,16 @@
 			path = "Target Support Files/Pods-LZToastHelper_Example";
 			sourceTree = "<group>";
 		};
+		19E5C9B82B987B13BDDCDFD04D769241 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				265DF1476AE1D8B278FBF5CBEE40E4A3 /* LICENSE */,
+				04071F71265B7DF1AC795D8DF1BBA9B2 /* LZToastHelper.podspec */,
+				FD5085886DACD2CC6EAC0AC34EF7BACD /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		1BC05BA2218435128B0C64753C6D5A14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +192,7 @@
 		3F242479102E24C5847AB040CB8095A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03008EA7FA88E465302796FC1C541B71 /* MBProgressHUD */,
+				7DA15A24060A7C02AA2887C73FB2018D /* MBProgressHUD */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -210,16 +211,6 @@
 			);
 			name = "Pods-LZToastHelper_Tests";
 			path = "Target Support Files/Pods-LZToastHelper_Tests";
-			sourceTree = "<group>";
-		};
-		5BF2E4658F64F2593985BADA9DFD3346 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				A9404031CDC262A4979D6093DC0E799E /* LICENSE */,
-				67DC07C5D170D117A3603681CCB7283D /* LZToastHelper.podspec */,
-				327D77822D21DB044885C884DBF83864 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		6E682DFA9239AF650B0EBF26441EA950 /* iOS */ = {
@@ -251,44 +242,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		92D4608CDA13F4837050E7BF3E772EEE /* Support Files */ = {
+		7DA15A24060A7C02AA2887C73FB2018D /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				B2303342D285C8E4F9D2CCCB950F5F93 /* LZToastHelper.modulemap */,
-				B78BE3664E508F29B47343BB4F620D39 /* LZToastHelper.xcconfig */,
-				F0D2489261EE454A0D732104F8AD0977 /* LZToastHelper-dummy.m */,
-				0A8FC788FCE1FC2E785E9879B474740B /* LZToastHelper-Info.plist */,
-				218B94D0CDB33A53CF517CDCA518CAE7 /* LZToastHelper-prefix.pch */,
-				EA5CF047B8D25421EB741D33E89EC1AE /* LZToastHelper-umbrella.h */,
+				FC7C54894F0D982511B53767CE31EBF1 /* MBProgressHUD.h */,
+				67C8787AEF5F8F4CCDD782A64D078427 /* MBProgressHUD.m */,
+				C86A493F744575B77BC85AB9B143DAC2 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/LZToastHelper";
+			name = MBProgressHUD;
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		972C05D4ABF4AFE0028A9907AE29C8E3 /* Support Files */ = {
+		C86A493F744575B77BC85AB9B143DAC2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				37ABD8DCAA991ADD9AA4DDA40D85379D /* MBProgressHUD.modulemap */,
-				850FF76381C7E65E1AF730D36F519546 /* MBProgressHUD.xcconfig */,
-				657678C8C3FB4725CEE10D8E8607F1EE /* MBProgressHUD-dummy.m */,
-				619D2E1B8E7310902C83396D0E12E72A /* MBProgressHUD-Info.plist */,
-				314A8B77E12FA60EC7A3A26BD6902E97 /* MBProgressHUD-prefix.pch */,
-				071047A4A08135548333750E08C06DA7 /* MBProgressHUD-umbrella.h */,
+				F1A0E508679ED342B4AEDF1866C001EB /* MBProgressHUD.modulemap */,
+				4ECF19F2C17178E7145FE1DBF7DE5B7D /* MBProgressHUD-dummy.m */,
+				53025FD44EEDEB9CEAE854B0AE31CB82 /* MBProgressHUD-Info.plist */,
+				71586C258C9A4BA21A453C698866EBC7 /* MBProgressHUD-prefix.pch */,
+				5F31C808188F0318B8D5A16F065156F9 /* MBProgressHUD-umbrella.h */,
+				5E221A5AAC45302AF396416395265FFD /* MBProgressHUD.debug.xcconfig */,
+				6CEB62E30C5BAB8D4A2A435A4D4DA33A /* MBProgressHUD.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		CED43C36D7205269A36004D0012AE79F /* LZToastHelper */ = {
-			isa = PBXGroup;
-			children = (
-				F4DAA5F5F294B6B58B5829A6BA91A289 /* LZToastHelper.h */,
-				2844304A5ECCED267FAFE05EE6C8D057 /* LZToastHelper.m */,
-				5BF2E4658F64F2593985BADA9DFD3346 /* Pod */,
-				92D4608CDA13F4837050E7BF3E772EEE /* Support Files */,
-			);
-			name = LZToastHelper;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -303,12 +280,39 @@
 			);
 			sourceTree = "<group>";
 		};
+		D21DC41B39A96F9B1142AEBEB2E0D9BD /* LZToastHelper */ = {
+			isa = PBXGroup;
+			children = (
+				5072D6C2DF8578CBFA8FB9ABEBD17DD7 /* LZToastHelper.h */,
+				9C9E000B854C963E12B3FF443A2AFA16 /* LZToastHelper.m */,
+				19E5C9B82B987B13BDDCDFD04D769241 /* Pod */,
+				FFF7495DB17710119C6C3954C965CFBD /* Support Files */,
+			);
+			name = LZToastHelper;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		FAA4333D378DB9FFD5F79FA9FE373C6E /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CED43C36D7205269A36004D0012AE79F /* LZToastHelper */,
+				D21DC41B39A96F9B1142AEBEB2E0D9BD /* LZToastHelper */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FFF7495DB17710119C6C3954C965CFBD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				25DA39FF87F1248E254031A194643386 /* LZToastHelper.modulemap */,
+				CDC375BC0AE770404204E4B406DB8D15 /* LZToastHelper-dummy.m */,
+				01BE765A664D975BBDA9E1C191CFEE85 /* LZToastHelper-Info.plist */,
+				48455590C4F039F1B28162E94117DFB4 /* LZToastHelper-prefix.pch */,
+				29AF51EF0B28B9475988D3DF0E46366B /* LZToastHelper-umbrella.h */,
+				1D2D275913D37000CA0D495762F74E0B /* LZToastHelper.debug.xcconfig */,
+				A6FAA5A4727AFA2C62EC275E780EF5ED /* LZToastHelper.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LZToastHelper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +446,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 1BC05BA2218435128B0C64753C6D5A14 /* Products */;
@@ -612,6 +617,67 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3768434FF99A8292511BD363E3AF2316 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D2D275913D37000CA0D495762F74E0B /* LZToastHelper.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LZToastHelper/LZToastHelper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LZToastHelper/LZToastHelper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LZToastHelper/LZToastHelper.modulemap";
+				PRODUCT_MODULE_NAME = LZToastHelper;
+				PRODUCT_NAME = LZToastHelper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		447C6EEB5B217240D7B8DF74144E292D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEB62E30C5BAB8D4A2A435A4D4DA33A /* MBProgressHUD.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = MBProgressHUD;
+				PRODUCT_NAME = MBProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -810,39 +876,9 @@
 			};
 			name = Debug;
 		};
-		AB331C074D9CCBD7F7111C6D662AD134 /* Debug */ = {
+		B575C6345EA5CD768787E733485810BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B78BE3664E508F29B47343BB4F620D39 /* LZToastHelper.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LZToastHelper/LZToastHelper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LZToastHelper/LZToastHelper-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LZToastHelper/LZToastHelper.modulemap";
-				PRODUCT_MODULE_NAME = LZToastHelper;
-				PRODUCT_NAME = LZToastHelper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C1E6BC47F368B01C2350F064DC25DFED /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B78BE3664E508F29B47343BB4F620D39 /* LZToastHelper.xcconfig */;
+			baseConfigurationReference = A6FAA5A4727AFA2C62EC275E780EF5ED /* LZToastHelper.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -871,40 +907,9 @@
 			};
 			name = Release;
 		};
-		D8E8D0BEAE36B943054DA3F3AF1DA435 /* Release */ = {
+		F198492F58B6B92993242107FA67C9E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 850FF76381C7E65E1AF730D36F519546 /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				PRODUCT_MODULE_NAME = MBProgressHUD;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FDAC6B58A24E0172E966AB899B1570A7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 850FF76381C7E65E1AF730D36F519546 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 5E221A5AAC45302AF396416395265FFD /* MBProgressHUD.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -965,8 +970,8 @@
 		CD2200F763BB97DF694E5FC76B6BAF02 /* Build configuration list for PBXNativeTarget "LZToastHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB331C074D9CCBD7F7111C6D662AD134 /* Debug */,
-				C1E6BC47F368B01C2350F064DC25DFED /* Release */,
+				3768434FF99A8292511BD363E3AF2316 /* Debug */,
+				B575C6345EA5CD768787E733485810BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -974,8 +979,8 @@
 		E5ED970663FC158EE3CFC351B8431083 /* Build configuration list for PBXNativeTarget "MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FDAC6B58A24E0172E966AB899B1570A7 /* Debug */,
-				D8E8D0BEAE36B943054DA3F3AF1DA435 /* Release */,
+				F198492F58B6B92993242107FA67C9E4 /* Debug */,
+				447C6EEB5B217240D7B8DF74144E292D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
