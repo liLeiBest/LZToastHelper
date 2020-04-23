@@ -36,7 +36,6 @@ NSString * const LZToastMessageForOther = @"";
 
 #pragma mark - -> LazyLoading
 - (NSMutableDictionary *)stateMessages {
-	
     if (nil == _stateMessages) {
         _stateMessages = [NSMutableDictionary dictionary];
     }
@@ -44,7 +43,6 @@ NSString * const LZToastMessageForOther = @"";
 }
 
 - (NSMutableDictionary *)stateIcons {
-	
     if (nil == _stateIcons) {
         _stateIcons = [NSMutableDictionary dictionary];
     }
@@ -53,7 +51,6 @@ NSString * const LZToastMessageForOther = @"";
 
 #pragma mark - -> initialization
 - (instancetype)init {
-	
     if (self = [super init]) {
 		
         [self setupDefaultValue];
@@ -78,7 +75,6 @@ NSString * const LZToastMessageForOther = @"";
 /** 改变不同状态下的提示语 */
 - (void)setMessage:(NSString *)message
           forState:(LZToastState)state {
-	
     if (nil == message || 0 == message.length) return;
     self.stateMessages[@(state)] = message;
 }
@@ -86,7 +82,6 @@ NSString * const LZToastMessageForOther = @"";
 /** 设置不同状态的图标 */
 - (void)setIcon:(UIImageView *)icon
        forState:(LZToastState)state {
-	
     if (nil == icon) return;
     UIImage *fitImage = [self scaledImage:icon.image];
     icon.image = fitImage;
@@ -117,7 +112,6 @@ NSString * const LZToastMessageForOther = @"";
             break;
         }
     }
-    
     [self showToastMessage:self.stateMessages[@(state)]
                      detail:nil
                    iconView:self.stateIcons[@(state)]
@@ -422,7 +416,6 @@ NSString * const LZToastMessageForOther = @"";
             toContentView:(UIView *)view
                ignoreIcon:(BOOL)ignore
                  autoHide:(BOOL)hide {
-	
     if (nil != self.myHud) {
         
         self.myHud.minShowTime = 0;
@@ -456,6 +449,10 @@ NSString * const LZToastMessageForOther = @"";
     toContentView:(UIView *)view
        ignoreIcon:(BOOL)ignore
          autoHide:(BOOL)hide {
+    if ((nil == message || 0 == message.length)
+        && (nil == detail || 0 == detail.length)) {
+        return;
+    }
     
 	// 实例
 	if (nil == view) {
