@@ -1,12 +1,13 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZToastHelper'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = '基于 MBProgressHUD 进行二次封装。'
   s.description      = <<-DESC
-                        1.单例
-                        2.全局统一配置
-                        3.隐藏统一回调
+  Toast 飘窗提醒
+  1.单例
+  2.全局统一配置
+  3.隐藏统一回调
                        DESC
 
   s.homepage         = 'https://github.com/liLeiBest'
