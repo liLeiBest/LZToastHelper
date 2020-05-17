@@ -1,5 +1,5 @@
 PODS:
-  - LZToastHelper (0.1.4):
+  - LZToastHelper (0.1.5):
     - MBProgressHUD
   - MBProgressHUD (1.2.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LZToastHelper: 66d531e01bc847e23e31b6ba4dc848548a61016b
+  LZToastHelper: ddaa7be02dc9085a5b6cfdcf4d532b640e389116
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
 PODFILE CHECKSUM: 74ce666cd4d07c2651766bfb935cdb9dfd8d9d22
