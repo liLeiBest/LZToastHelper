@@ -168,7 +168,7 @@ NSString * const LZToastMessageForOther = @"";
                      detail:nil
                    iconView:nil
               toContentView:view
-                 ignoreIcon:NO
+                 ignoreIcon:YES
                    autoHide:NO];
 }
 
