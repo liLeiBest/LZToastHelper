@@ -385,7 +385,7 @@ NSString * const LZToastMessageForOther = @"";
 - (void)setupDefaultValue {
 	
     self.showTime = 1.0f;
-    self.minSize = CGSizeMake(200, 80);
+    self.minSize = CGSizeMake(120, 60);
     self.messageAttributed = @{
                                NSFontAttributeName : [UIFont systemFontOfSize:15.0f],
                                NSForegroundColorAttributeName : [UIColor whiteColor],
@@ -463,7 +463,7 @@ NSString * const LZToastMessageForOther = @"";
 	self.myHud = hud;
 	
 	// mode
-    if (YES == ignore || nil == iconView) {
+    if (YES == ignore && nil == iconView) {
         hud.mode = MBProgressHUDModeText;
     } else if (nil != iconView) {
 		
@@ -501,7 +501,7 @@ NSString * const LZToastMessageForOther = @"";
     hud.graceTime = 0.25f;
     hud.minShowTime = self.showTime;
     hud.margin = 10.0f;
-	hud.defaultMotionEffectsEnabled = YES;
+	hud.defaultMotionEffectsEnabled = NO;
     hud.animationType = MBProgressHUDAnimationZoomOut;
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;

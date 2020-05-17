@@ -76,7 +76,7 @@ typedef void (^LZToastCompleteBlock)(void);
 
 /** 自动隐藏显示时间，默认 1.0f 秒 */
 @property (nonatomic, assign) NSTimeInterval showTime;
-/** 提示框最小 size，默认 (200, 80) */
+/** 提示框最小 size，默认 (120, 60) */
 @property (nonatomic, assign) CGSize minSize;
 /** MESSAGE字体属性，默认 15号 白色 */
 @property (nonatomic, strong) NSDictionary *messageAttributed;
