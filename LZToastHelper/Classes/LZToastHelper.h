@@ -78,13 +78,13 @@ typedef void (^LZToastCompleteBlock)(void);
 @property (nonatomic, assign) NSTimeInterval showTime;
 /** 提示框最小 size，默认 (120, 60) */
 @property (nonatomic, assign) CGSize minSize;
-/** MESSAGE字体属性，默认 15号 白色 */
+/** MESSAGE字体属性，默认 15号 whiteColor */
 @property (nonatomic, strong) NSDictionary *messageAttributed;
-/** DETAIL字体属性，默认 13号 白色 */
+/** DETAIL字体属性，默认 13号 whiteColor */
 @property (nonatomic, strong) NSDictionary *detailAttributed;
-/** 所有文本颜色，默认 白色 */
+/** 所有文本颜色，默认 whiteColor */
 @property (nonatomic, strong) UIColor *contentColor;
-/** 背景色，默认 黑色*/
+/** 背景色，默认 darkGrayColor */
 @property (nonatomic, strong) UIColor *backgroundColor;
 
 
