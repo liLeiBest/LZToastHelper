@@ -38,10 +38,10 @@
     
     for (int i = 0; i < 10; i++) {
         
-        [self testInteractive];
-        [self testLongTitle];
-        [self testChangeState];
-        [self testToast];
+//        [self testInteractive];
+//        [self testLongTitle];
+//        [self testChangeState];
+//        [self testToast];
         [self testCustomImage];
     }
 }
@@ -50,7 +50,14 @@
     
     [LZToast showMessage:@"测试你有没有苗lafl苏里加厚lfsjlijfldsafasj虹口区蝇蟬kjkl就影响力；影响力中坚力量"
                   toView:nil];
-    [LZToast hideMessageAfterDelay:1.0];
+    
+    [LZToast showMessage:@"加载……" toView:nil];
+    
+    [LZToast showMessageWithoutIcon:@"哈哈" toView:nil];
+    
+    [LZToast hideMessageAfterDelay:1.0 completion:^{
+        
+    }];
 }
 
 - (void)testChangeState {
@@ -64,6 +71,8 @@
 - (void)testToast {
     
     [LZToast showSuccess:@"哈哈哈哈" toView:nil];
+    
+    [LZToast showError:@"哈哈哈哈" toView:nil];
 }
 
 - (void)testCustomImage {
@@ -94,4 +103,5 @@
         NSLog(@"Toast 消失了");
     }];
 }
+
 @end
