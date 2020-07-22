@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZToastHelper'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = '基于 MBProgressHUD 进行二次封装。'
   s.description      = <<-DESC
   Toast 飘窗提醒
