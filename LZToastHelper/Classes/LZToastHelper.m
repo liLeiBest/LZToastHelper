@@ -34,7 +34,7 @@ NSString * const LZToastMessageForOther = @"";
 
 @implementation LZToastHelper
 
-#pragma mark - -> LazyLoading
+// MARK: - Lazy Loading
 - (NSMutableDictionary *)stateMessages {
     if (nil == _stateMessages) {
         _stateMessages = [NSMutableDictionary dictionary];
@@ -49,7 +49,7 @@ NSString * const LZToastMessageForOther = @"";
     return _stateIcons;
 }
 
-#pragma mark - -> initialization
+// MARK: - initialization
 - (instancetype)init {
     if (self = [super init]) {
 		
@@ -60,7 +60,7 @@ NSString * const LZToastMessageForOther = @"";
     return self;
 }
 
-#pragma mark - -> Public
+// MARK: - Public
 /** 实例 */
 + (instancetype)sharedToastHelper {
 	
@@ -88,7 +88,7 @@ NSString * const LZToastMessageForOther = @"";
     self.stateIcons[@(state)] = icon;
 }
 
-#pragma mark Show
+// MARK: <Show>
 /** 显示不同状态的提示 */
 - (void)showMessageForState:(LZToastState)state
                      toView:(UIView *)view {
@@ -114,12 +114,12 @@ NSString * const LZToastMessageForOther = @"";
     }
     UIImageView *iconView = self.stateIcons[@(state)];
     BOOL ignore = nil == iconView ? YES : NO;
-    [self showToastMessage:self.stateMessages[@(state)]
-                    detail:nil
-                  iconView:iconView
-             toContentView:view
-                ignoreIcon:ignore
-                  autoHide:autoHide];
+    [self showToastWithMessage:self.stateMessages[@(state)]
+                        detail:nil
+                      iconView:iconView
+                 containerView:view
+                    ignoreIcon:ignore
+                      autoHide:autoHide];
 }
 
 /** 显示不同状态的提示，可以添加提示消失后的动作 */
@@ -128,7 +128,7 @@ NSString * const LZToastMessageForOther = @"";
                  completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessageForState:state toView:view];
-    self.myHud.completionBlock = completeBlock;
+    [self hideCompleteCallback:completeBlock];
 }
 
 /** 显示成功提示 */
@@ -142,12 +142,12 @@ NSString * const LZToastMessageForOther = @"";
     
     UIImageView *iconView = self.stateIcons[@(LZToastStateOperateSuccess)];
     BOOL ignore = nil == iconView ? YES : NO;
-    [self showToastMessage:success
-                    detail:nil
-                  iconView:iconView
-             toContentView:view
-                ignoreIcon:ignore
-                  autoHide:YES];
+    [self showToastWithMessage:success
+                        detail:nil
+                      iconView:iconView
+                 containerView:view
+                    ignoreIcon:ignore
+                      autoHide:YES];
 }
 
 /** 显示失败提示 */
@@ -161,23 +161,23 @@ NSString * const LZToastMessageForOther = @"";
     
     UIImageView *iconView = self.stateIcons[@(LZToastStateOperateFailure)];
     BOOL ignore = nil == iconView ? YES : NO;
-    [self showToastMessage:error
-                    detail:nil
-                  iconView:iconView
-             toContentView:view
-                ignoreIcon:ignore
-                  autoHide:YES];
+    [self showToastWithMessage:error
+                        detail:nil
+                      iconView:iconView
+                 containerView:view
+                    ignoreIcon:ignore
+                      autoHide:YES];
 }
 
 /** 显示指定的提示 */
 - (void)showMessage:(NSString *)message
              toView:(UIView *)view {
-    [self showToastMessage:message
-                    detail:nil
-                  iconView:nil
-             toContentView:view
-                ignoreIcon:NO
-                  autoHide:NO];
+    [self showToastWithMessage:message
+                        detail:nil
+                      iconView:nil
+                 containerView:view
+                    ignoreIcon:NO
+                      autoHide:NO];
 }
 
 /** 显示指定的提示语，可以添加提示消失后的动作 */
@@ -186,19 +186,19 @@ NSString * const LZToastMessageForOther = @"";
          completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message toView:view];
-    self.myHud.completionBlock = completeBlock;
+    [self hideCompleteCallback:completeBlock];
 }
 
 /** 显示特定提示语，特定图标 */
 - (void)showMessage:(NSString *)message
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view {
-    [self showToastMessage:message
-                    detail:nil
-                  iconView:iconView
-             toContentView:view
-                ignoreIcon:NO
-                  autoHide:NO];
+    [self showToastWithMessage:message
+                        detail:nil
+                      iconView:iconView
+                 containerView:view
+                    ignoreIcon:NO
+                      autoHide:NO];
 }
 
 /** 显示特定提示语，特定图标，可以添加提示消失后的动作 */
@@ -208,19 +208,19 @@ NSString * const LZToastMessageForOther = @"";
          completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message customIconView:iconView toView:view];
-    self.myHud.completionBlock = completeBlock;
+    [self hideCompleteCallback:completeBlock];
 }
 
 /** 显示包含 message 和 detail 的提示 */
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
              toView:(UIView *)view {
-    [self showToastMessage:message
-                    detail:detail
-                  iconView:nil
-             toContentView:view
-                ignoreIcon:NO
-                  autoHide:NO];
+    [self showToastWithMessage:message
+                        detail:detail
+                      iconView:nil
+                 containerView:view
+                    ignoreIcon:NO
+                      autoHide:NO];
 }
 
 /** 显示包含 message 和 detail 的提示，可以添加提示消失后的动作 */
@@ -230,18 +230,18 @@ NSString * const LZToastMessageForOther = @"";
          completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessage:message detail:detail toView:view];
-    self.myHud.completionBlock = completeBlock;
+    [self hideCompleteCallback:completeBlock];
 }
 
 /** 显示只包含 message 的提示 */
 - (void)showMessageWithoutIcon:(NSString *)message
                         toView:(UIView *)view {
-    [self showToastMessage:message
-                    detail:nil
-                  iconView:nil
-             toContentView:view
-                ignoreIcon:YES
-                  autoHide:NO];
+    [self showToastWithMessage:message
+                        detail:nil
+                      iconView:nil
+                 containerView:view
+                    ignoreIcon:YES
+                      autoHide:NO];
 }
 
 /** 显示只包含 message 的提示，可以添加提示消失后的动作 */
@@ -250,7 +250,7 @@ NSString * const LZToastMessageForOther = @"";
                     completion:(LZToastCompleteBlock)completeBlock {
 	
     [self showMessageWithoutIcon:message toView:view];
-    self.myHud.completionBlock = completeBlock;
+    [self hideCompleteCallback:completeBlock];
 }
 
 /** 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作 */
@@ -261,13 +261,13 @@ NSString * const LZToastMessageForOther = @"";
          completion:(LZToastCompleteBlock)completeBlock {
 	
     BOOL ignore = nil == iconView ? YES : NO;
-    [self showToastMessage:message
-                    detail:detail
-                  iconView:iconView
-             toContentView:view
-                ignoreIcon:ignore
-                  autoHide:NO];
-	self.myHud.completionBlock = completeBlock;
+    [self showToastWithMessage:message
+                        detail:detail
+                      iconView:iconView
+                 containerView:view
+                    ignoreIcon:ignore
+                      autoHide:NO];
+	[self hideCompleteCallback:completeBlock];
 }
 
 /** 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作，可以交互主动取消 */
@@ -288,7 +288,6 @@ NSString * const LZToastMessageForOther = @"";
         buttonTitle &&
         [buttonTitle isKindOfClass:[NSString class]] &&
         buttonTitle.length) {
-        
         if (nil == iconView) {
             self.myHud.mode = MBProgressHUDModeIndeterminate;
         }
@@ -300,36 +299,35 @@ NSString * const LZToastMessageForOther = @"";
     }
 }
 
-#pragma mark Hide
+// MARK: <Hide>
 /** 隐藏提示 */
 - (void)hideMessage {
-    [self.myHud hideAnimated:YES];
+    [self hideMessageAfterDelay:0.0 completion:nil];
 }
 
 /** 隐藏提示，可以添加提示消失后的动作 */
 - (void)hideMessageCompletion:(LZToastCompleteBlock)completeBlock {
-	
-    [self hideMessage];
-    self.myHud.completionBlock = completeBlock;
+	[self hideMessageAfterDelay:0.0 completion:completeBlock];
 }
 
 /** 延迟 delay 秒隐藏提示 */
 - (void)hideMessageAfterDelay:(NSTimeInterval)delay {
-    [self.myHud hideAnimated:YES afterDelay:delay];
+    [self hideMessageAfterDelay:delay completion:nil];
 }
 
 /** 延迟 delay 秒隐藏提示，可以添加提示消失后的动作 */
 - (void)hideMessageAfterDelay:(NSTimeInterval)delay
                    completion:(LZToastCompleteBlock)completeBlock {
 	
-    [self hideMessageAfterDelay:delay];
-    self.myHud.completionBlock = completeBlock;
+    [self hideAnimated:YES afterDelay:delay];
+    if (completeBlock) {    
+        [self hideCompleteCallback:completeBlock];
+    }
 }
 
-#pragma mark - -> Other
+// MARK: <Other>
 /** 改变提示状态 */
 - (void)changeState:(LZToastState)state {
-	
     // 改变提示框图标
 	UIImageView *iconImgView = self.stateIcons[@(state)];
     if (nil != iconImgView) {
@@ -339,7 +337,6 @@ NSString * const LZToastMessageForOther = @"";
     } else {
         self.myHud.mode = MBProgressHUDModeText;
     }
-	
 	// 改变提示文字
     NSString *message = self.myHud.label.attributedText.string;
     NSString *detail = self.myHud.detailsLabel.attributedText.string;
@@ -351,12 +348,8 @@ NSString * const LZToastMessageForOther = @"";
     [self updateToastMessage:message detail:detail];
 }
 
-#pragma mark - -> Private
-/**
- @author Lilei
- 
- @brief 初始所有状态提示语
- */
+// MARK: - Private
+/// 初始所有状态提示语
 - (void)prepareMessageForState {
 	
     self.stateMessages[@(LZToastStateLoading)] = LZToastMessageForLoading;
@@ -371,11 +364,7 @@ NSString * const LZToastMessageForOther = @"";
     self.stateMessages[@(LZToastStateOther)] = LZToastMessageForOther;
 }
 
-/**
- @author Lilei
- 
- @brief 初始所有状态图标
- */
+/// 初始所有状态图标
 - (void)prepareIconForState {
 	
     [self setIcon:nil forState:LZToastStateLoading];
@@ -390,11 +379,7 @@ NSString * const LZToastMessageForOther = @"";
     [self setIcon:nil forState:LZToastStateOther];
 }
 
-/**
- @author Lilei
- 
- @brief 初始默认值
- */
+/// 初始默认值
 - (void)setupDefaultValue {
 	
     self.showTime = 1.0f;
@@ -411,69 +396,38 @@ NSString * const LZToastMessageForOther = @"";
     self.contentColor = [UIColor whiteColor];
 }
 
-/**
- @author Lilei
- 
- @brief 设置提示框内容
- 
- @param message 标题
- @param detail 描述
- @param iconView 图标
- @param view 视图
- @param ignore 是否忽略图标
- @param hide 是否自动隐藏
- */
-- (void)showToastMessage:(NSString *)message
-                  detail:(NSString *)detail
-                iconView:(UIImageView *)iconView
-           toContentView:(UIView *)view
-              ignoreIcon:(BOOL)ignore
-                autoHide:(BOOL)hide {
+/// 设置提示框内容
+/// @param message 标题
+/// @param detail 内容
+/// @param iconView 图标
+/// @param containerView 展示视图
+/// @param ignore 是否忽略图标
+/// @param hide 是否自动隐藏
+- (void)showToastWithMessage:(NSString *)message
+                      detail:(NSString *)detail
+                    iconView:(UIImageView *)iconView
+               containerView:(UIView *)containerView
+                  ignoreIcon:(BOOL)ignore
+                    autoHide:(BOOL)hide {
+    // 隐藏已经存在的弹框
     if (nil != self.myHud) {
         
         self.myHud.minShowTime = 0;
-        [self.myHud hideAnimated:NO];
+        [self hideAnimated:NO afterDelay:0.0];
         self.myHud = nil;
-	}
-    
-    [self showToast:message
-             detail:detail
-           iconView:iconView
-      toContentView:view
-         ignoreIcon:ignore
-           autoHide:hide];
-}
-
-/**
- @author Lilei
- 
- @brief 设置提示框内容
- 
- @param message 标题
- @param detail 描述
- @param iconView 图标
- @param view 视图
- @param ignore 是否忽略图标
- @param hide 是否自动隐藏
- */
-- (void)showToast:(NSString *)message
-           detail:(NSString *)detail
-         iconView:(UIImageView *)iconView
-    toContentView:(UIView *)view
-       ignoreIcon:(BOOL)ignore
-         autoHide:(BOOL)hide {
-    if ((nil == message || 0 == message.length)
-        && (nil == detail || 0 == detail.length)) {
+    }
+    // 异常：如果标题和内容均为空，则不显示
+    if ((nil == message || NO == [message isKindOfClass:[NSString class]] || 0 == message.length)
+        && (nil == detail || NO == [detail isKindOfClass:[NSString class]] || 0 == detail.length)) {
         return;
     }
-	// 实例
-	if (nil == view) {
-		view = [UIApplication sharedApplication].keyWindow;
-	}
-	[view endEditing:YES];
-	MBProgressHUD *hud = [self toastToView:view];
-	self.myHud = hud;
-	// mode
+    // 实例弹框
+    if (nil == containerView) {
+        containerView = [UIApplication sharedApplication].keyWindow;
+    }
+    [containerView endEditing:YES];
+    MBProgressHUD *hud = [self toastToView:containerView];
+    self.myHud = hud;
     if (YES == ignore) {
         hud.mode = MBProgressHUDModeText;
     } else {
@@ -488,30 +442,23 @@ NSString * const LZToastMessageForOther = @"";
             hud.mode = MBProgressHUDModeIndeterminate;
         }
     }
-	// 设置提示语
+    // 设置提示语
     [self updateToastMessage:message detail:detail];
     // 是否自动隐藏
     if (YES == hide) {
-        [self hideMessageAfterDelay:self.showTime];
+        [self hideAnimated:YES afterDelay:self.showTime];
     }
 }
 
-/**
- @author Lilei
- 
- @brief 创建提示框到 View 视图上
- 
- @param view 视图
- 
- @return MBProgressHUD
- */
+/// 创建提示框到 View 视图上
+/// @param view 展示视图
 - (MBProgressHUD *)toastToView:(UIView *)view {
 	
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.minSize = self.minSize;
     hud.graceTime = 0.25f;
     hud.minShowTime = self.showTime;
-    hud.margin = 10.0f;
+    hud.margin = 8;
 	hud.defaultMotionEffectsEnabled = NO;
     hud.animationType = MBProgressHUDAnimationZoomOut;
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -523,11 +470,8 @@ NSString * const LZToastMessageForOther = @"";
     return hud;
 }
 
-/**
- @author Lilei
- 
- @brief 根据size缩放图片
- */
+/// 缩放图片
+/// @param image 图片
 - (UIImage *)scaledImage:(UIImage *)image {
 	
     CGSize fitSize = CGSizeMake(37, 37);
@@ -543,14 +487,11 @@ NSString * const LZToastMessageForOther = @"";
     }
 }
 
-/**
- @author Lilei
- 
- @brief 更新标题和内容文字
- */
+/// 更新标题和内容文字
+/// @param message 标题
+/// @param detail 内容
 - (void)updateToastMessage:(NSString *)message
                     detail:(NSString *)detail {
-    
     if (![message isKindOfClass:[NSString class]] || nil == message) {
         message = @"";
     }
@@ -566,6 +507,32 @@ NSString * const LZToastMessageForOther = @"";
     [[NSAttributedString alloc] initWithString:message attributes:self.messageAttributed];
     self.myHud.detailsLabel.attributedText =
     [[NSAttributedString alloc] initWithString:detail attributes:self.detailAttributed];
+}
+
+/// 隐藏提示框
+/// @param animated 是否显示动画
+/// @param delay 延迟 delay 秒
+- (void)hideAnimated:(BOOL)animated
+          afterDelay:(NSTimeInterval)delay {
+    if ([NSThread isMainThread]) {
+        [self.myHud hideAnimated:animated afterDelay:delay];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myHud hideAnimated:animated afterDelay:delay];
+        });
+    }
+}
+
+/// 隐藏完成回调
+/// @param complete 完成回调
+- (void)hideCompleteCallback:(LZToastCompleteBlock)complete {
+    self.myHud.completionBlock = ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (complete) {
+                complete();
+            }
+        });
+    };
 }
 
 @end

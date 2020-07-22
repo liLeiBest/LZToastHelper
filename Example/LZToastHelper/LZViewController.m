@@ -71,7 +71,6 @@
 - (void)testToast {
     
     [LZToast showSuccess:@"哈哈哈哈" toView:nil];
-    
     [LZToast showError:@"哈哈哈哈" toView:nil];
 }
 
@@ -86,7 +85,9 @@
               completion:^{
         NSLog(@"Toast 消失了");
     }];
-    [LZToast hideMessageAfterDelay:2.0];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+        [LZToast hideMessageAfterDelay:2.0];
+    });
 }
 
 - (void)testInteractive {

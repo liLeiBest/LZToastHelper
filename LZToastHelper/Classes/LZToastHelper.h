@@ -88,7 +88,7 @@ typedef void (^LZToastCompleteBlock)(void);
 @property (nonatomic, strong) UIColor *backgroundColor;
 
 
-// MARK: - INIT
+// MARK: - Init
 /**
  实例
 
@@ -96,13 +96,13 @@ typedef void (^LZToastCompleteBlock)(void);
  */
 + (instancetype)sharedToastHelper;
 
-// MARK: - CONFIG
+// MARK: - Config
 /**
  @author Lilei
  
  @brief 设置不同状态的提示语
  
- @param message    提示语
+ @param message 提示语
  @param state   LZToastState
  */
 - (void)setMessage:(NSString *)message
@@ -113,20 +113,20 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 设置不同状态的图标
  
- @param icon    图标
- @param state   LZToastState
+ @param icon  图标
+ @param state LZToastState
  */
 - (void)setIcon:(UIImageView *)icon
        forState:(LZToastState)state;
 
-// MARK: - SHOW
+// MARK: - Show
 /**
  @author Lilei
  
  @brief 显示不同状态的提示
  
- @param state   LZToastState
- @param view    视图
+ @param state LZToastState
+ @param view  视图
  */
 - (void)showMessageForState:(LZToastState)state
                      toView:(UIView *)view;
@@ -136,9 +136,9 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示不同状态的提示，可以添加提示消失后的动作
  
- @param state   LZToastState
- @param view    视图
- @param completeBlock   LZToastCompleteBlock
+ @param state         LZToastState
+ @param view          视图
+ @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessageForState:(LZToastState)state
                      toView:(UIView *)view
@@ -149,7 +149,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示成功提示
  
- @param view    视图
+ @param view 视图
  */
 - (void)showSuccessToView:(UIView *)view;
 
@@ -158,7 +158,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示指定的成功提示语
  
- @param success    成功提示
+ @param success 成功提示
  @param view    视图
  */
 - (void)showSuccess:(NSString *)success
@@ -169,7 +169,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示失败提示
  
- @param view    视图
+ @param view 视图
  */
 - (void)showErrorToView:(UIView *)view;
 
@@ -178,8 +178,8 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示指定的失败提示语
  
- @param error   错误提示
- @param view    视图
+ @param error 错误提示
+ @param view  视图
  */
 - (void)showError:(NSString *)error
            toView:(UIView *)view;
@@ -189,7 +189,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示指定的提示
  
- @param message    消息提示
+ @param message 消息提示
  @param view    视图
  */
 - (void)showMessage:(NSString *)message
@@ -200,8 +200,8 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示指定的提示语，可以添加提示消失后的动作
  
- @param message     消息提示
- @param view    视图
+ @param message       消息提示
+ @param view          视图
  @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
@@ -213,9 +213,9 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示特定提示语，特定图标
  
- @param message    消息提示
- @param iconView    图标
- @param view    视图
+ @param message  消息提示
+ @param iconView 图标
+ @param view     视图
  */
 - (void)showMessage:(NSString *)message
      customIconView:(UIImageView *)iconView
@@ -226,9 +226,9 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示特定提示语，特定图标，可以添加提示消失后的动作
  
- @param message    消息提示
- @param iconView    图标
- @param view    视图
+ @param message         消息提示
+ @param iconView        图标
+ @param view            视图
  @param completeBlock   LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
@@ -241,7 +241,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示包含 message 和 detail 的提示
  
- @param message    消息提示
+ @param message 消息提示
  @param detail  消息描述
  @param view    视图
  */
@@ -254,9 +254,9 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示包含 message 和 detail 的提示，可以添加提示消失后的动作
  
- @param message    消息提示
- @param detail  消息描述
- @param view    视图
+ @param message       消息提示
+ @param detail        消息描述
+ @param view          视图
  @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
@@ -269,7 +269,7 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示只包含 message 的提示
  
- @param message    消息提示
+ @param message 消息提示
  @param view    视图
  */
 - (void)showMessageWithoutIcon:(NSString *)message
@@ -280,8 +280,8 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示只包含 message 的提示，可以添加提示消失后的动作
  
- @param message    消息提示
- @param view    视图
+ @param message       消息提示
+ @param view          视图
  @param completeBlock LZToastCompleteBlock
  */
 - (void)showMessageWithoutIcon:(NSString *)message
@@ -293,10 +293,10 @@ typedef void (^LZToastCompleteBlock)(void);
  
  @brief 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作
  
- @param message    消息提示
- @param detail  消息描述
- @param iconView    图标
- @param view    视图
+ @param message         消息提示
+ @param detail          消息描述
+ @param iconView        图标
+ @param view            视图
  @param completeBlock   LZToastCompleteBlock
  */
 - (void)showMessage:(NSString *)message
@@ -310,13 +310,13 @@ typedef void (^LZToastCompleteBlock)(void);
 
 @brief 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作，可以交互主动取消
 
-@param message    消息提示
-@param detail  消息描述
-@param iconView    图标
-@param view    视图
-@param interactionEnable    是否允许交互
-@param buttonTitle    操作标题
-@param completeBlock    LZToastCompleteBlock
+@param message           消息提示
+@param detail            消息描述
+@param iconView          图标
+@param view              视图
+@param interactionEnable 是否允许交互
+@param buttonTitle       操作标题
+@param completeBlock     LZToastCompleteBlock
 */
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
@@ -326,7 +326,7 @@ typedef void (^LZToastCompleteBlock)(void);
         buttonTitle:(NSString *)buttonTitle
          completion:(LZToastCompleteBlock)completeBlock;
 
-// MARK: - HIDE
+// MARK: - Hide
 /**
  @author Lilei
  
@@ -363,8 +363,7 @@ typedef void (^LZToastCompleteBlock)(void);
 - (void)hideMessageAfterDelay:(NSTimeInterval)delay
                    completion:(LZToastCompleteBlock)completeBlock;
 
-// MARK: - OTHER
-
+// MARK: - Other
 /**
  @author Lilei
  
