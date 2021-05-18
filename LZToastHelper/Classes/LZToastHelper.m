@@ -421,6 +421,11 @@ NSString * const LZToastMessageForOther = @"";
         && (nil == detail || NO == [detail isKindOfClass:[NSString class]] || 0 == detail.length)) {
         return;
     }
+    // 异常：非主线程调用，则不显示
+    if (NO == [NSThread mainThread]) {
+        NSAssert([NSThread isMainThread], @"只在主线程提示");
+        return;
+    }
     // 实例弹框
     if (nil == containerView) {
         containerView = [UIApplication sharedApplication].keyWindow;

@@ -42,8 +42,18 @@
 //        [self testLongTitle];
 //        [self testChangeState];
 //        [self testToast];
-        [self testCustomImage];
+//        [self testCustomImage];
     }
+    
+    [self testAsync];
+}
+
+- (void)testAsync {
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        [self testLongTitle];
+    });
 }
 
 - (void)testLongTitle {
