@@ -74,7 +74,7 @@ typedef void (^LZToastCompleteBlock)(void);
  */
 @interface LZToastHelper : NSObject
 
-/** 自动隐藏显示时间，默认 1.0f 秒 */
+/** 自动隐藏显示时间，默认 1.5 秒 */
 @property (nonatomic, assign) NSTimeInterval showTime;
 /** 提示框最小 size，默认 (120, 60) */
 @property (nonatomic, assign) CGSize minSize;
@@ -182,6 +182,19 @@ typedef void (^LZToastCompleteBlock)(void);
  @param view  视图
  */
 - (void)showError:(NSString *)error
+           toView:(UIView *)view;
+
+/**
+ @author Lilei
+ 
+ @brief 显示指定的失败提示语
+ 
+ @param error 错误提示
+ @param detail  错误描述
+ @param view  视图
+ */
+- (void)showError:(NSString *)error
+           detail:(NSString *)detail
            toView:(UIView *)view;
 
 /**

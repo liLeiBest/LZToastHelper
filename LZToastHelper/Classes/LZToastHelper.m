@@ -158,11 +158,17 @@ NSString * const LZToastMessageForOther = @"";
 /** 显示指定的失败提示语 */
 - (void)showError:(NSString *)error
            toView:(UIView *)view {
+    [self showError:error detail:nil toView:view];
+}
+
+- (void)showError:(NSString *)error
+           detail:(NSString *)detail
+           toView:(UIView *)view {
     
     UIImageView *iconView = self.stateIcons[@(LZToastStateOperateFailure)];
     BOOL ignore = nil == iconView ? YES : NO;
     [self showToastWithMessage:error
-                        detail:nil
+                        detail:detail
                       iconView:iconView
                  containerView:view
                     ignoreIcon:ignore
@@ -382,7 +388,7 @@ NSString * const LZToastMessageForOther = @"";
 /// 初始默认值
 - (void)setupDefaultValue {
 	
-    self.showTime = 1.0f;
+    self.showTime = 1.5f;
     self.minSize = CGSizeMake(120, 60);
     self.messageAttributed = @{
                                NSFontAttributeName : [UIFont systemFontOfSize:15.0f],
