@@ -167,6 +167,19 @@ typedef void (^LZToastCompleteBlock)(void);
 /**
  @author Lilei
  
+ @brief 显示指定的成功提示语及详情
+ 
+ @param success 成功提示
+ @param detail  成功描述
+ @param view    视图
+ */
+- (void)showSuccess:(NSString *)success
+             detail:(NSString *)detail
+             toView:(UIView *)view;
+
+/**
+ @author Lilei
+ 
  @brief 显示失败提示
  
  @param view 视图
@@ -187,7 +200,7 @@ typedef void (^LZToastCompleteBlock)(void);
 /**
  @author Lilei
  
- @brief 显示指定的失败提示语
+ @brief 显示指定的失败提示语及详情
  
  @param error 错误提示
  @param detail  错误描述
@@ -304,6 +317,66 @@ typedef void (^LZToastCompleteBlock)(void);
 /**
  @author Lilei
  
+ @brief 显示只包含 message、detail 的提示
+ 
+ @param message       消息提示
+ @param detail          消息描述
+ @param view          视图
+ */
+- (void)showMessageWithoutIcon:(NSString *)message
+                        detail:(NSString *)detail
+                        toView:(UIView *)view;
+
+/**
+ @author Lilei
+ 
+ @brief 显示只包含 message、detail 的提示，可以添加提示消失后的动作
+ 
+ @param message       消息提示
+ @param detail          消息描述
+ @param view          视图
+ @param completeBlock LZToastCompleteBlock
+ */
+- (void)showMessageWithoutIcon:(NSString *)message
+                        detail:(NSString *)detail
+                        toView:(UIView *)view
+                    completion:(LZToastCompleteBlock)completeBlock;
+
+/**
+ @author Lilei
+ 
+ @brief 显示只包含 message、detai、detail 对齐方式的提示
+ 
+ @param message       消息提示
+ @param detail          消息描述
+ @param align            对齐方式
+ @param view          视图
+ */
+- (void)showMessageWithoutIcon:(NSString *)message
+                        detail:(NSString *)detail
+                   detailAlign:(NSTextAlignment)align
+                        toView:(UIView *)view;
+
+/**
+ @author Lilei
+ 
+ @brief 显示只包含 message、detai、detail 对齐方式的提示，可以添加提示消失后的动作
+ 
+ @param message       消息提示
+ @param detail          消息描述
+ @param align            对齐方式
+ @param view          视图
+ @param completeBlock LZToastCompleteBlock
+ */
+- (void)showMessageWithoutIcon:(NSString *)message
+                        detail:(NSString *)detail
+                   detailAlign:(NSTextAlignment)align
+                        toView:(UIView *)view
+                    completion:(LZToastCompleteBlock)completeBlock;
+
+/**
+ @author Lilei
+ 
  @brief 显示包含 message、detail 及 icon 的提示，可以添加提示消失后的动作
  
  @param message         消息提示
@@ -314,6 +387,25 @@ typedef void (^LZToastCompleteBlock)(void);
  */
 - (void)showMessage:(NSString *)message
              detail:(NSString *)detail
+     customIconView:(UIImageView *)iconView
+             toView:(UIView *)view
+         completion:(LZToastCompleteBlock)completeBlock;
+
+/**
+ @author Lilei
+ 
+ @brief 显示包含 message、detai、detail 对齐方式及 icon 的提示，可以添加提示消失后的动作
+ 
+ @param message         消息提示
+ @param detail          消息描述
+ @param align            对齐方式
+ @param iconView        图标
+ @param view            视图
+ @param completeBlock   LZToastCompleteBlock
+ */
+- (void)showMessage:(NSString *)message
+             detail:(NSString *)detail
+        detailAlign:(NSTextAlignment)align
      customIconView:(UIImageView *)iconView
              toView:(UIView *)view
          completion:(LZToastCompleteBlock)completeBlock;

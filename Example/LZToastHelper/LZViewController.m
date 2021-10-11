@@ -7,7 +7,7 @@
 //
 
 #import "LZViewController.h"
-#import <LZToastHelper/LZToastHelper.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface LZViewController ()
 
@@ -15,8 +15,8 @@
 
 @implementation LZViewController
 
-- (void)viewDidLoad
-{
+// MARK: - Initialization
+- (void)viewDidLoad {
     [super viewDidLoad];
 	
     // 成功图标
@@ -28,23 +28,53 @@
     [LZToast setIcon:completeImgView forState:LZToastStateLoadComplete];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// MARK: - UI Action
+- (void)touchesBegan:(NSSet<UITouch *> *)touches
+           withEvent:(UIEvent *)event {
+    
+    for (int i = 0; i <= 2; i++) {
+        
+        MBProgressHUD *hud = [self toastToView:self.view];
+        hud.label.text = [NSString stringWithFormat:@"标题-%d", i];
+        hud.detailsLabel.text = [NSString stringWithFormat:@"内容-测试-%d", i];
+        [hud hideAnimated:YES afterDelay:2];
+    }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+// MARK: - Private
+
+- (MBProgressHUD *)toastToView:(UIView *)view {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.minSize = CGSizeMake(100, 100);
+    hud.graceTime = 0.25f;
+    hud.minShowTime = 1.0;
+    hud.margin = 8;
+    hud.defaultMotionEffectsEnabled = NO;
+    hud.animationType = MBProgressHUDAnimationZoomOut;
+    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.color = [UIColor darkGrayColor];
+    hud.contentColor = [UIColor whiteColor];
+    hud.removeFromSuperViewOnHide = YES;
+    
+    hud.mode = MBProgressHUDModeCustomView;
+    UIImage *completeImg = [UIImage imageNamed:@"hub_warning_icon"];
+    UIImageView *completeImgView = [[UIImageView alloc] initWithImage:completeImg];
+    hud.customView = completeImgView;
+    return hud;
+}
+
+- (void)testMuti {
     
     for (int i = 0; i < 10; i++) {
         
-//        [self testInteractive];
-//        [self testLongTitle];
-//        [self testChangeState];
-//        [self testToast];
-//        [self testCustomImage];
+        [self testInteractive];
+        [self testLongTitle];
+        [self testChangeState];
+        [self testToast];
+        [self testCustomImage];
     }
-    
     [self testAsync];
 }
 
@@ -75,10 +105,14 @@
     [LZToast showMessageForState:LZToastStateSubmitting
                           toView:nil];
     [LZToast changeState:LZToastStateSubmitComplete];
-    [LZToast hideMessageAfterDelay:2];
+    [LZToast hideMessageAfterDelay:2 completion:^{
+    }];
 }
 
 - (void)testToast {
+    
+    [LZToast showSuccess:@"哈哈哈哈" toView:nil];
+    [LZToast showError:@"哈哈哈哈" toView:nil];
     
     [LZToast showSuccess:@"哈哈哈哈" toView:nil];
     [LZToast showError:@"哈哈哈哈" toView:nil];
@@ -95,9 +129,7 @@
               completion:^{
         NSLog(@"Toast 消失了");
     }];
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-        [LZToast hideMessageAfterDelay:2.0];
-    });
+    [LZToast hideMessageAfterDelay:2.0];
 }
 
 - (void)testInteractive {
@@ -109,7 +141,7 @@
           customIconView:completeImgView
                   toView:nil
        interactionEnable:YES
-             buttonTitle:@"Cancle"
+             buttonTitle:@"取消"
               completion:^{
         NSLog(@"Toast 消失了");
     }];
