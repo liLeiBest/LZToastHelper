@@ -27,12 +27,25 @@
 }
 
 - (void)lz_addConstraints:(NSArray<__kindof NSLayoutConstraint *> *)constraints {
-    [NSLayoutConstraint activateConstraints:constraints];
+    @try {
+        [self lz_addConstraints:constraints];
+    } @catch (NSException *exception) {
+        NSLog(@"addConstraints:%@", exception);
+    } @finally {
+        [NSLayoutConstraint activateConstraints:constraints];
+    }
 }
 
 - (void)lz_removeConstraints:(NSArray<__kindof NSLayoutConstraint *> *)constraints {
-    [NSLayoutConstraint deactivateConstraints:constraints];
+    @try {
+        [self lz_removeConstraints:constraints];
+    } @catch (NSException *exception) {
+        NSLog(@"removeConstraints:%@", exception);
+    } @finally {
+        [NSLayoutConstraint deactivateConstraints:constraints];
+    }
 }
+
 
 @end
 
