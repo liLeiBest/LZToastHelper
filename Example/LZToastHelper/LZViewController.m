@@ -32,18 +32,17 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches
            withEvent:(UIEvent *)event {
     
-    UIImage *completeImg = [UIImage imageNamed:@"hub_warning_icon"];
-    UIImageView *completeImgView = [[UIImageView alloc] initWithImage:completeImg];
-    for (int i = 0; i <= 10; i++) {
+    UIImage *img = [UIImage imageNamed:@"hub_warning_icon"];
+    UIImageView *customView = [[UIImageView alloc] initWithImage:img];
+    for (NSUInteger i = 0; i < 2; i++) {
         
         MBProgressHUD *hud = [self toastToView:self.view];
         hud.mode = MBProgressHUDModeCustomView;
-        hud.customView = completeImgView;
-        hud.label.text = [NSString stringWithFormat:@"标题-%d", i];
-        hud.detailsLabel.text = [NSString stringWithFormat:@"内容-测试-%d", i];
+        [hud setCustomView:customView];
+        hud.label.text = @"Title";
+        hud.detailsLabel.text = @"Content";
         [hud hideAnimated:YES afterDelay:2];
     }
-//    [self testMuti];
 }
 
 // MARK: - Private
